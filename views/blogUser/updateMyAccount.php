@@ -1,5 +1,5 @@
  <!-- Main -->
- <form id="updateAccount" method="post" enctype="multipart/form-data" action= "?controller=blogUser&action=updateMyAccount">>
+ <form id="updateAccount" method="post" enctype="multipart/form-data" action= "?controller=blogUser&action=updateMyAccount">
 <div id="main">
     <div class="container">
 	<div class="row">
@@ -24,14 +24,11 @@
 					</ul>
                                     </div>
                             <div>
-            <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+            <input type="hidden" name="MAX_FILE_SIZE" value="100000000" />
             <input type="file" name="image" class="btn" required />
         </div>
         <br>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-            <div class="form-group contactus-btn">
-                <input type="submit" class="cntct-btn" value="Upload Picture"> 
-            </div>
         </div>
                     </section>
                 </div> <!-- End Sidebar -->
@@ -62,12 +59,12 @@
                                 <tr>
                                 <tr>
                                     <td>Username</td>
-                                    <td><input type="text" name="username" placeholder="Username" value="<?= $blogUser->username; ?>"/></td>
+                                    <td><?= $blogUser->username; ?></td>
                                 </tr>
                             </tbody>
                         </table>
                             <div style="margin-top: 15%">
-                  <a href="#" class="btn btn-sm">Delete my account</a>
+                  
                   <a href="#" onclick="document.getElementById('updateAccount').submit()" class="btn btn-primary">Update my account</a>
                             </div>
                 </div>

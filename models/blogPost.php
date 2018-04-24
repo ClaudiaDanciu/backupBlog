@@ -26,13 +26,15 @@
       $this->noOfViews = $noOfViews;
       $this->profilePic = $profilePic;
     }
-
+    
     public static function all() {
       $list = [];
       $db = Db::getInstance();
-      $sql = "SELECT blogPostID, title, summary, mainContent, image, CONCAT(firstName, ' ', lastName) AS author, dateCreated, category, noOfViews, profilePic "
-          . "FROM blogPost INNER JOIN blogUser ON blogPost.author = blogUser.blogUserID "
-              . "ORDER BY dateCreated DESC LIMIT 10;";
+      $sql = "SELECT blogPostID, title, summary, mainContent, image, CONCAT(firstName, ' ', lastName) AS author,"
+          . " dateCreated, category.category, noOfViews, profilePic "
+          . " FROM blogPost INNER JOIN blogUser ON blogPost.author = blogUser.blogUserID "
+          . " INNER JOIN category ON blogPost.category = category.categoryID"
+          . " ORDER BY dateCreated DESC LIMIT 16;";
       $req = $db->query($sql);
       // we create a list of Product objects from the database results
       foreach($req->fetchAll() as $blogPost) {
@@ -47,10 +49,11 @@
       $list = [];
       $db = Db::getInstance();
       $sql = "SELECT blogPostID, title, summary, mainContent, image, CONCAT(firstName, ' ', lastName) AS author" 
-              . ", dateCreated, category, noOfViews, profilePic, blogUserID" 
+              . ", dateCreated, category.category, noOfViews, profilePic, blogUserID" 
               . " FROM blogPost INNER JOIN blogUser ON blogPost.author = blogUser.blogUserID"
-              . " WHERE username = :username" //will this be available following login?
-              . " ORDER BY dateCreated DESC LIMIT 10";
+              . " INNER JOIN category ON blogPost.category = category.categoryID"
+              . " WHERE username = :username"
+              . " ORDER BY dateCreated DESC LIMIT 16";
       $req = $db->prepare($sql);
       $req->execute(['username' => $username]);
       foreach($req->fetchAll() as $blogPost) {
@@ -64,9 +67,10 @@
       $list = [];
       $db = Db::getInstance();
       $sql = "SELECT blogPostID, title, summary, mainContent, image, CONCAT(firstName, ' ', lastName) AS author" 
-              . ", dateCreated, category, noOfViews, profilePic, blogUserID" 
+              . ", dateCreated, category.category, noOfViews, profilePic, blogUserID" 
               . " FROM blogPost INNER JOIN blogUser ON blogPost.author = blogUser.blogUserID"
-              . " WHERE category = :category"
+              . " INNER JOIN category ON blogPost.category = category.categoryID"
+              . " WHERE blogPost.category = :category"
               . " ORDER BY dateCreated DESC LIMIT 10";
       $req = $db->prepare($sql);
       $req->execute(['category' => $category]);
@@ -81,12 +85,13 @@
       $list = [];
       $db = Db::getInstance();
       $sql = "SELECT blogPostID, title, summary, mainContent, image, CONCAT(firstName, ' ', lastName) AS author" 
-              . ", dateCreated, category, noOfViews, profilePic, blogUserID" 
+              . ", dateCreated, category.category, noOfViews, profilePic, blogUserID" 
               . " FROM blogPost INNER JOIN blogUser ON blogPost.author = blogUser.blogUserID"
+              . " INNER JOIN category ON blogPost.category = category.categoryID"
               . " WHERE title LIKE $keyword"
               . " OR summary LIKE $keyword"
               . " OR mainContent LIKE $keyword"
-              . " ORDER BY dateCreated DESC LIMIT 10";
+              . " ORDER BY dateCreated DESC LIMIT 16";
 
       $req = $db->prepare($sql);
       //$req->execute(['keyword' => $keyword]); //for some reason it isn't working this way so put $keyword straight into search sql????
@@ -145,7 +150,7 @@ public static function update($id) {
     $req->bindParam(':image', $image);
     $req->bindParam(':category', $category);
     $req->bindParam(':id', $id);
-$req->execute();
+    $req->execute();
 
 //upload product image
 BlogPost::uploadFile($_FILES['image']['name']);
@@ -168,6 +173,12 @@ public static function addComment($blogPostID, $userID, $comment) {
     $req->bindParam(':blogComment', $comment);
     
     $req->execute();
+//    $req = $db->prepare("SELECT profilePic, firstName, lastName FROM bloguser");
+//    $req->bindParam(':profilePic', $profilePic);
+//    $req->bindParam(':firstName', $firstName); 
+//    $req->bindParam(':lastName', $lastName);
+//    
+//    $req->execute();
     
     return $comment;
     
@@ -211,7 +222,7 @@ $req->execute();
 BlogPost::uploadFile($_FILES['image']['name']);
 }
 
-const AllowedTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+const AllowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
 const InputKey = 'image';
 
 //die() function calls replaced with trigger_error() calls

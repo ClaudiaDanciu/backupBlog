@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center pad-top-big pad-bottom-big error-page">
-            <h2>About US</h2>
+            <h2></h2>
             </div>
             <div class="col-md-12">
                 <!--Container-->
@@ -21,9 +21,9 @@
                     <section class="blurb">
                         <h2 class="title">Jenny O'Leary</h2>
 
-                        <a href="#" class="image"><img class="img-responsive" style="height: 200px;"  src="views/images/Jenny.png" alt="about us" /></a>
+                        <a href="https://www.linkedin.com/in/jenny-o-leary-092a03a1/" class="image"><img class="img-responsive" style="height: 200px;"  src="views/images/JeO.png" alt="about us" /></a>
                         <div class="author-widget">
-                            <h4 class="author-name" style='letter-spacing:1px'>Ajax/PHP/MySQL</h4>
+                            <h4 class="author-name" style='letter-spacing:1px'></h4>
                             </div>
                         <div class="social">
                             <ul class="icons">
@@ -39,10 +39,10 @@
                     <!-- About -->
                     <section class="blurb">
                         <h2 class="title">Jo Reavell</h2>
+                        <a href="https://www.linkedin.com/in/joanne-reavell-102663136/" class="image"><img class="img-responsive" style="height: 200px;" src="views/images/Jo.png" alt="about us" /></a>
 
-                        <a href="single-post.html" class="image"><img class="img-responsive" style="height: 200px;" src="views/images/Jo.png" alt="about us" /></a>
                         <div class="author-widget">
-                            <h4 class="author-name" style='letter-spacing:1px'>PHP/MySQL/JS</h4>
+                            <h4 class="author-name" style='letter-spacing:1px'></h4>
                         </div>
                         <div class="social">
                             <ul class="icons">
@@ -59,17 +59,16 @@
                 <div class="sidebar" id="sidebar">
                     <!-- About -->
                     <section class="blurb">
-                        <h2 class="title">Jen Patchet</h2>
+                        <h2 class="title">Jen Patchett</h2>
+                        <a href="https://www.linkedin.com/in/jenpatchett/" class="image"><img class="img-responsive" style="height: 200px;" src="views/images/JenPat.png" alt="about us" /></a>
 
-                        <a href="single-post.html" class="image"><img class="img-responsive" style="height: 200px;" src="views/images/JenPat.png" alt="about us" /></a>
                         <div class="author-widget">
-                            <h6 class="author-name" style='letter-spacing:1px'>PHP/Scrum Master</h6>
+                            <h6 class="author-name" style='letter-spacing:-1.2px'></h6>
                              </div>
                         <div class="social">
                             <ul class="icons">
-                                <li><a href="https://www.facebook.com/JenPatchettDeveloper" target="_blank"><i class="fa fa-facebook"></i> </a></li>
                                 <li><a href="https://twitter.com/JenPatchett" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/jenpatchett/" target="_blank"><i class="fa fa-instagram"></i> </a></li>
+                                <li><a href="https://www.linkedin.com/in/jenpatchett/" target="_blank"><i class="fa fa-linkedin"></i> </a></li>
                                 
                             </ul>
                         </div>
@@ -81,17 +80,17 @@
                     <!-- About -->
                     <section class="blurb">
                         <h2 class="title">Claudia Danciu</h2>
+                        <a href="https://www.linkedin.com/in/claudiadanciu/" class="image"><img class="img-responsive" style="height: 200px;" src="views/images/claudiaD.png" alt="about us" /></a>
 
-                        <a href="single-post.html" class="image"><img class="img-responsive" style="height: 200px;" src="views/images/Dia.jpg" alt="about us" /></a>
-                        <div class="author-widget">
-                            <h4 class="author-name" style='letter-spacing:1px'>PHP/JS/HTML/CSS</h4>
+                        <div class="author-widget ">
+                            <h6 class="author-name" style='letter-spacing:-1.0px'></h6>
                         </div>
                         <div class="social">
                             <ul class="icons">
                                 <li><a href="https://www.facebook.com/claudia.borosianu" target="_blank"><i class="fa fa-facebook"></i> </a></li>
                                 <li><a href="https://twitter.com/Amaradia" target="_blank"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="https://www.instagram.com/claudia_danciu/?hl=en" target="_blank"><i class="fa fa-instagram"></i> </a></li>
-                                <li><a href="https://www.linkedin.com/in/claudiadanciu/#" target="_blank"><i class="fa fa-linkedin"></i> </a></li>
+                                <li><a href="https://www.linkedin.com/in/claudiadanciu/" target="_blank"><i class="fa fa-linkedin"></i> </a></li>
                                 
                             </ul>
                         </div>
