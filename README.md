@@ -1,2 +1,2 @@
 # BlogFinalProject
-http://skydev.eu-west-1.elasticbeanstalk.com/?controller=blogPost&action=readAll
+http://skydev.eu-west-1.elasticbeanstalk.com/index.php
